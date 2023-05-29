@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav,Container,Navbar } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 function Header() {
   return (
    <header >
@@ -8,8 +8,10 @@ function Header() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Checkout</Nav.Link>
+          <Link  to="/">Home</Link>
+          {/* &nbsp mean non breaking space between two links */}
+          &nbsp; 
+          <Link to="checkout">Checkout</Link>
           </Nav>
         </Container>
       </Navbar>

@@ -280,4 +280,53 @@ section{
 
   }
 }
+// add to cart styles
+.add-to-cart-wrapper{
+  width: 80px;
+  position: fixed;
+  top: 32%;
+  right: 0;
+  display: flex;
+  background-color: #d5f0a2;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+  padding: 5px;
+  border-radius: 5px;
+
+  .add-to-cart-item{
+    img{
+      width: 100%;
+    height: 80px;
+    object-fit: cover;
+    }
+    >div{
+      border-bottom: 1px dashed black;
+      margin: 5px 0;
+      padding: 5px 0;
+    }
+    h6{
+      color: #ff006a;
+    }
+  }
+}
+
+.checkout{
+  text-align: center;
+  // display: flex;
+  
+ &-card{
+  display: flex;
+  justify-content: center;
+  img{
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+ }
+}
 

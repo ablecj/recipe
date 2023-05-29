@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import CardDish from "./CardDish";
 import PopUp from "./PopUp";
 // step 4 useContext
-import { AllMenuContext } from "./Menu";
+import { AllMenuContext } from "./AllMenuContext";
+import AddTOCart from "./AddTOCart";
 
 function Dishes(props){
     // Using useContext in the child
@@ -37,14 +38,30 @@ function Dishes(props){
             )
         }
     })
+    // add to cart state management
+    let[addToCart, setAddTOCart] = useState([])
+
+    // add to cart handler defined 
+    function addToCartHandler(addToCartImg,addToCartTitle){
+        setAddTOCart([
+            ...addToCart,
+            {
+                "img" : addToCartImg,
+                "title" : addToCartTitle
+            }
+        ])
+    }
+    console.log("what's inside", addToCart);
     
     return(
         <section className="dishes">
             {showPopup && <PopUp 
             closePopupHandler={closePopupHandler} 
             showDishname={showDishname}
+            addToCartHandler={addToCartHandler}
             />}
             <div className="container">
+                <AddTOCart addToCart={addToCart} />
                 <div className="dishes-content text-center">
                 <h3>Our Special Dishes</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, ipsa! Ut eum cum amet quis omnis aliquid, error velit reiciendis repudiandae adipisci.</p>
